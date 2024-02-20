@@ -13,7 +13,7 @@ public class UVA10193 {
                 System.out.println("Pair #"+z+": Love is not all you need!");
                 continue;
             }
-            for(int i=2;i<=a2;i++){
+            for(int i=2;i<=a2/2;i++){
                 if(a1%i==0&&a2%i==0){
                     yes=false;
                     break;

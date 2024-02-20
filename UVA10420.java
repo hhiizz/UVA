@@ -1,7 +1,39 @@
 import java.security.KeyStore.Entry;
 import java.util.*;
-class UVA10420{//ok
+class UVA10420{//yes
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = Integer.parseInt(sc.nextLine());
+        String [] country =  new String [a+1];
+        int [] count2 = new int [a+1];
+        for(int i=0;i<country.length;i++){
+            country[i]="0";
+            count2[i]=0;
+        }
+        for(int i=0;i<a;i++){
+            String counytryre = sc.nextLine().split(" ")[0];
+            if(!Arrays.asList(country).contains(counytryre)){
+                country[i]=counytryre;
+                count2[i]=1;
+            }else{
+                for(int k = 0;k<country.length;k++){
+                    if(country[k].equals(counytryre)){
+                        count2[k]++;
+                    }
+                }
+            }
+        }
+            for(int z =0;z<count2.length;z++){
+                country[z]=country[z]+" "+count2[z];
+            }
+            Arrays.sort(country);
+            for(String s:country){
+                if(!s.equals("0 0"))
+                    System.out.println(s);
+            }
+    }
+}
+/*
         Scanner sc = new Scanner (System.in);
         int a = Integer.parseInt(sc.nextLine());
         String [] ss = new String [a+1];
@@ -34,32 +66,6 @@ class UVA10420{//ok
         }
 
 }
-}
-/*
-        Scanner sc = new Scanner(System.in);
-        int a =Integer.parseInt(sc.nextLine());
-        Map <String,Integer> map = new HashMap<String,Integer>();
-        for(int i=0;i<a;i++){
-            String sd = sc.nextLine();
-            String [] sas = sd.split(" ");
-            if(map.get(sas[0])!=null){
-                int jj = map.get(sas[0]);
-                map.put(sas[0],++jj);
-            }else{
-                map.put(sas[0], 1);
-            }
-        }
-        Set set = map.entrySet();
-        Object [] aaaa = set.toArray();
-        Arrays.sort(aaaa);
-        for(Object o :aaaa){
-            System.out.println(o+" "+map.get(o));
-        }
-        /*Iterator it = map.entrySet().iterator();
-        while(it.hasNext()){
-            Map.Entry<String,Integer> entry=(Map.Entry)it.next();
-            System.out.println(entry.getKey()+" "+entry.getValue());
-        }*/
 
 /*
         Scanner sc = new Scanner(System.in);

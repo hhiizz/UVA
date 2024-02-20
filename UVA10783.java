@@ -7,10 +7,10 @@ public class UVA10783 {
         while(a-->0){
             int z =sc.nextInt();
             int b = sc.nextInt();
-            if(z%2==0)z++;
             int total = 0;
-            for(int i=z;i<=b;i+=2){
-                total+=i;
+            for(int i=z;i<=b;i++){
+                if(i%2!=0)
+                    total+=i;
             }
             System.out.println("Case "+(count++)+": "+total);
         }

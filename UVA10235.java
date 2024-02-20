@@ -2,38 +2,39 @@ import java.util.*;
 class UVA10235{
 	public static void main(String [] args){
 	Scanner sc = new Scanner(System.in);
-	while(sc.hasNextInt()){
-		boolean yes =true;
-        boolean yes2 =true;
-		int a =sc.nextInt();
-		for(int i=2;i<a;i++){
-			if(a%i==0){
-                yes =false;
+	while(sc.hasNext()){
+        boolean yes = true;
+        Boolean yese = true;
+        String a = sc.next();
+        String b ="";
+        for(int i=a.length()-1;i>=0;i--){
+            b+=a.charAt(i);
+        }
+        int z = Integer.parseInt(a);
+        for(int i =2;i<=z/2;i++){
+            if(z%i==0){
+                yes = false;
+                break;
             }
-		}
-        String ss = a+"";
-		String b="";
-		for(int i=ss.length()-1;i>=0;i--){
-            b+=ss.charAt(i)-'0';
-		}
-        if(a==Integer.parseInt(b))yes2=false;
-		int c = Integer.parseInt(b);
-		for(int i=2;i<c;i++){
-			if(c%i==0){
-                yes2 =false;
+        }
+        int z2 = Integer.parseInt(b);
+        for(int i =2;i<=z2/2;i++){
+            if(z2%i==0){
+                yese = false;
+                break;
             }
-		}
+        }
+        if(yes && yese && !a.equals(b) ){
+            System.out.println(a+" is emirp.");
 
-		if(yes&&yes2){
-			System.out.println(a+" is emirp.");
-		}else if(yes&&!yes2){
-			System.out.println(a+" is prime.");
-		}else{
+        }else if(yes){
+            System.out.println(a+" is prime.");
+        }else{
             System.out.println(a+" is not prime.");
         }
 
 	}
-	}
+}
 }
 /*
         Scanner sc = new Scanner(System.in);

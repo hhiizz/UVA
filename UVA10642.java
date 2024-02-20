@@ -14,6 +14,7 @@ public class UVA10642 {
         sc.close();
     }
     public static int ss(int x,int y){
-        return ((x + y + 1) * (x + y + 2) / 2 - y);
+        int n = x+y+1;
+        return ((n*(n+1)/2))-y;
     }
 }

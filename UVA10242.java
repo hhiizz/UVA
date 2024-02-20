@@ -1,4 +1,4 @@
-import java.text.DecimalFormat;
+
 import java.util.*;
 public class UVA10242 {//不相同+不相同-相同點
     public static void main(String[] args) {
@@ -30,8 +30,8 @@ public class UVA10242 {//不相同+不相同-相同點
                 }
                 totx=totx-xx;
                 toty=toty-yy;
-                System.out.printf("%.3f %.3f ",totx,toty);
-                System.out.println();
+                System.out.printf("%.3f %.3f",totx,toty);
+                System.out.println("");
         }
     }
 }

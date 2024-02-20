@@ -6,13 +6,7 @@ public class UVA11150 {//ok
         while(sc.hasNextInt()){
             cola =sc.nextInt();
             System.out.println(cola*3/2);
-            int botter = cola;
-            while(botter>=3){
-                cola+=botter/3;
-                botter=botter/3+botter%3;
-            }
-            if(botter==2)cola++;
-            System.out.println(cola);
+
         }
     }
 }

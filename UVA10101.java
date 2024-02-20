@@ -4,22 +4,23 @@ class UVA10101{
         Scanner sc= new Scanner (System.in);
         int count = 1;
         while(sc.hasNextLong()){
-        Long a = sc.nextLong();
-        System.out.printf("%4d.", count);
-        if(a==0){
-            System.out.print(" 0");
-        }else{
-            chage(a);
+            Long a = sc.nextLong();
+            System.out.printf("%4d.",count);
+
+            if(a==0){
+                System.out.print(" 0");
+            }else{
+                chage(a);
+            }
+            count++;
+            System.out.println("");
         }
-        count++;
-        System.out.println();
-    }
     }
     public static void chage(Long a){
         if(a>=10000000){
             chage(a/10000000);
             System.out.print(" kuti");
-            a = a%100000000;
+            a = a%10000000;
         }
         if(a>=100000){
             chage(a/100000);

@@ -1,21 +1,18 @@
 import java.util.*;
 public class UVA10056 {
-    public static void main(String [] args){
+    public static void main(String [] args){//yes
         Scanner sc = new Scanner(System.in);
         int count = sc.nextInt();
-        int R = 50;
         while(count-->0){
-            int n = sc.nextInt();
+            int N = sc.nextInt();
             double p = sc.nextDouble();
-            double q =1-p;
-            int k =sc.nextInt();
-            double a = Math.pow(q,k-1)*p;
-            double b = Math.pow(q,n);
+            int I = sc.nextInt();
             if(p==0){
-                System.out.println("0.0000");
+                System.out.printf("%.4f",p);
             }else{
-                System.out.printf("%.4f\n",a*b);
+                System.out.printf("%.4f",p*Math.pow(1-p,I-1)/(1-Math.pow(1-p,N)));
             }
+            System.out.println();
         }
     }
 }

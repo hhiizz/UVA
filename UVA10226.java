@@ -3,7 +3,9 @@ public class UVA10226 {//ok
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
         int a=1;
+        int fled = 0;
         while(a>0){
+            if(fled++!=0)System.out.println("");
             int m=sc.nextInt();
             int n=sc.nextInt();
             if(n==0&&m==0)break;

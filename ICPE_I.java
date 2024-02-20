@@ -26,5 +26,6 @@ public interface ICPE_I {//ok
                 System.out.println();
             }
         }
+        sc.close();
     }
 }

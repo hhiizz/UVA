@@ -1,25 +1,37 @@
-import java.util.Scanner;
+import java.util.*;
 
 class UVA10062{
 	public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
-		int newline=0; //為了控制換行所定的變數。
-
+		int np =0;
 		while(sc.hasNextLine()){
-			if((newline++)!=0)System.out.println("");
-			String st=sc.nextLine();
-
-			int arr[]=new int[127];
-			int max=0;
-			for(int i=0;i<st.length();i++) arr[st.charAt(i)]++; //計算每個字元出現次數。
-			for(int i=0;i<arr.length;i++) if(arr[i]>max) max=arr[i]; //ㄎ找出最多的次數。
-
-			//Output
-			for(int i=1;i<=max;i++){
-				for(int j=arr.length-1;j>=0;j--){
-					if(arr[j]==i)System.out.println(j+" "+arr[j]);
-				}
+			if((np++)!=0)System.out.println();
+			String a = sc.nextLine();
+			int asc [] = new int [128];
+			String asc2 [] = new String [128];
+			for(int i=0;i<a.length();i++){
+				asc[a.charAt(i)]++;
 			}
+			for(int i=0;i<asc.length;i++)asc2[i] = "0 0";
+			for(int i=0;i<asc.length;i++){
+				if(asc[i]!=0)
+					asc2[i]=i+" "+asc[i];
+			}
+
+			Arrays.sort(asc2,new Comparator<String>(){
+				public int compare(String o1,String o2){
+					if(Integer.parseInt(o1.split(" ")[1])!=Integer.parseInt(o2.split(" ")[1])){
+						return Integer.parseInt(o1.split(" ")[1])-Integer.parseInt(o2.split(" ")[1]);
+					}else{
+						return Integer.parseInt(o2.split(" ")[0])-Integer.parseInt(o1.split(" ")[0]);
+					}
+				}
+			});
+			for(String u:asc2){
+				if(!u.equals("0 0"))
+				System.out.println(u);
+			}
+
 		}
 	}
 }

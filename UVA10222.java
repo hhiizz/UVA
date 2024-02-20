@@ -51,9 +51,7 @@ public class UVA10222 {
                     case ']':
                         System.out.print("p");
                     break;
-                    case '\\':
-                        System.out.print("[");
-                    break;
+
                     case 'a':
                         System.out.print("a");
                     break;

@@ -1,23 +1,25 @@
 import java.util.*;
-class UVA00272{//ok
+class UVA00272{//yes
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean test = true;
-        while(sc.hasNextLine()){
-            String getinput = sc.nextLine();
-            for(int i=0;i<getinput.length();i++){
-                if(test&&getinput.charAt(i)=='"'){
-                    System.out.print("``");
-                    test = false;
-                }else if(!test&&getinput.charAt(i)=='"'){
-                    System.out.print("''");
-                    test = true;
+        boolean yes = true;
+        while(sc.hasNext()){
+            String a = sc.nextLine();
+            for(int i=0;i<a.length();i++){
+                if(a.charAt(i)=='"'){
+                    if(yes){
+                        System.out.print("``");
+                        yes = !yes;
+                    }else{
+                        System.out.print("''");
+                        yes = !yes;
+                    }
                 }else{
-                    System.out.print(getinput.charAt(i));
+                        System.out.print(a.charAt(i));
                 }
+            }
+            System.out.println();
         }
-            System.out.println(getinput);
-    }
     }
 }
 /*
